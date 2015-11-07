@@ -7,9 +7,6 @@ var ct = container("id-threescript-animation", r);
 var c = pcam(45, ct.w / ct.h, 0.1, 10000);
 c.updateProjectionMatrix();
 c.rotation.y = Math.PI;
-// c.position.set(-30, 40, 30);
-// c.lookAt(s.position);
-
 
 resize(ct, c, r);
 
