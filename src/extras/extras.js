@@ -1,7 +1,7 @@
-function loatex(url) {
+var loatex = load_texture = function(url) {
    return THREE.ImageUtils.loadTexture(url);
-}
+};
 
-function loatexcub(urls) {
+var loatexcub = load_text_cube = function(urls) {
    return THREE.ImageUtils.loadTextureCube(urls);
-}
+};
