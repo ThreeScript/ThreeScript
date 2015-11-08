@@ -14,7 +14,7 @@
  * @returns {Object}
  */
 
-var bg = boxgeo = box_geometry = function(w, h, d, ws, hs, ds) {
+var boxgeo = box_geometry = function(w, h, d, ws, hs, ds) {
    return new THREE.BoxGeometry(w, h, d, ws, hs, ds);
 };
 
@@ -27,7 +27,7 @@ var bg = boxgeo = box_geometry = function(w, h, d, ws, hs, ds) {
  * @returns {Object} Returns a new THREE.CircleGeometry circle geometry object.
  */
 
-var cg = cirgeo = circle = circle_geometry = function(r, s, ts, tl) {
+var cirgeo = circle = circle_geometry = function(r, s, ts, tl) {
    return new THREE.CircleGeometry(r, s, ts, tl);
 };
 
@@ -36,7 +36,7 @@ var cg = cirgeo = circle = circle_geometry = function(r, s, ts, tl) {
 // ts: thetaStart
 // tl: thetaLength
 
-var cbg = cirbufgeo = circlebufgeo = circle_buffer_geometry = function(r, s, ts, tl) {
+var cirbufgeo = circle_buffer_geometry = function(r, s, ts, tl) {
    return new THREE.CircleBufferGeometry(r, s, ts, tl);
 };
 
@@ -52,86 +52,91 @@ var cbg = cirbufgeo = circlebufgeo = circle_buffer_geometry = function(r, s, ts,
  * @param {Number} tl - theta length
  * @returns {Object} cilinder geometry
  */
-function cylgeo(rt, rb, h, rs, hs, oe, ts, tl) {
+var cylgeo = cylinder_geometry = function (rt, rb, h, rs, hs, oe, ts, tl) {
    return new THREE.CylinderGeometry(rt, rb, h, rs, hs, oe, ts, tl);
-}
+};
 
-function dodgeo(radius, detail) {
+/**
+ * Returns the THREE.DodecahedronGeometry object.
+ * @param {Number} radius - radius
+ * @param {Number} detail - detail
+ */
+var dodgeo = dodecahedron_geometry = function (radius, detail) {
    return new THREE.DodecahedronGeometry(radius, detail);
-}
+};
 
-function edggeo(geometry, thresholdAngle) {
+var edggeo = edges_geometry =function (geometry, thresholdAngle) {
    return new THREE.EdgesGeometry(geometry, thresholdAngle);
-}
+};
 
-function extgeo(shapes, options) {
+var extgeo = extrude_geometry = function (shapes, options) {
    return new THREE.ExtrudeGeometry(shapes, options);
-}
+};
 
-function icogeo(radius, detail) {
+var icogeo = icosahedron_geometry =function (radius, detail) {
    return new THREE.IcosahedronGeometry(radius, detail);
-}
+};
 
-function latgeo(points, segments, phiStart, phiLength) {
+var latgeo = lathe_geometry = function (points, segments, phiStart, phiLength) {
    return new THREE.LatheGeometry(points, segments, phiStart, phiLength);
-}
+};
 
-function octgeo(radius, detail) {
+var octgeo = octahedron_geometry = function (radius, detail) {
    return new THREE.OctahedronGeometry(radius, detail);
-}
+};
 
-function pargeo(func, slices, stacks) {
+var pargeo = parametric_geometry = function (func, slices, stacks) {
    return new THREE.ParametricGeometry(func, slices, stacks);
-}
+};
 
-function plabufgeo(width, height, widthSegments, heightSegments) {
+var plabufgeo = plane_buffer_geometry = function (width, height, widthSegments, heightSegments) {
    return new THREE.PlaneBufferGeometry(width, height, widthSegments, heightSegments);
-}
+};
 
-function plageo(width, height, widthSegments, heightSegments) {
+var plageo = plane_geometry = function (width, height, widthSegments, heightSegments) {
    return new THREE.PlaneGeometry(width, height, widthSegments, heightSegments);
-}
+};
 
-function polgeo(vertices, indices, radius, detail) {
+var polgeo = polyhedron_geometry = function (vertices, indices, radius, detail) {
    return new THREE.PolyhedronGeometry(vertices, indices, radius, detail);
-}
+};
 
-function ringeo(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength) {
+var ringeo = ring_geometry = function (innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength) {
    return new THREE.RingGeometry(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength);
-}
+};
 
-function shageo(shapes, options) {
+var shageo = shape_geometry = function (shapes, options) {
    return new THREE.ShapeGeometry(shapes, options);
-}
+};
 
-function sphbufgeo(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
+var sphbufgeo = sphere_buffer_geometry = function (radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
    return new THREE.SphereBufferGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength);
-}
+};
 
-function sphgeo(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
+var sphgeo = sphere_geometry = function (radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
    return new THREE.SphereGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength);
-}
+};
 
-function tetgeo(radius, detail) {
+var tetgeo = tetrahedron_geometry = function (radius, detail) {
    return new THREE.TetrahedronGeometry(radius, detail);
-}
+};
 
-function txtgeo(text, parameters) {
+var txtgeo = text_geometry = function (text, parameters) {
    return new THREE.TextGeometry(text, parameters);
-}
+};
 
-function torgeo(radius, tube, radialSegments, tubularSegments, arc) {
+var torgeo = torus_geometry = function (radius, tube, radialSegments, tubularSegments, arc) {
    return new THREE.TorusGeometry(radius, tube, radialSegments, tubularSegments, arc);
-}
+};
 
-function knogeo(radius, tube, radialSegments, tubularSegments, p, q, heightScale) {
+var knogeo = torus_knot_geometry= function (radius, tube, radialSegments, tubularSegments, p, q, heightScale) {
    return new THREE.TorusKnotGeometry(radius, tube, radialSegments, tubularSegments, p, q, heightScale);
-}
+};
 
-function tubgeo(path, segments, radius, radialSegments, closed, taper) {
+var tubgeo = tube_geometry = function (path, segments, radius, radialSegments, closed, taper) {
    return new THREE.TubeGeometry(path, segments, radius, radialSegments, closed, taper);
-}
+};
 
-function wirgeo(geometry) {
+var wirgeo = wireframe_geometry = function (geometry) {
    return new THREE.WireframeGeometry(geometry);
-}
+};
