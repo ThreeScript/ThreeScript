@@ -11,7 +11,7 @@
  * @returns {Object} cube camera
  */
 
-var cc = ccam = cubecam = cubecamera = function(n, f, cr) {
+var ccam = cube_camera = function(n, f, cr) {
    return new THREE.CubeCamera(n, f, cr);
 };
 
