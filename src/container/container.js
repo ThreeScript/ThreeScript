@@ -1,4 +1,14 @@
-   function container(id, renderer) {
+ /**
+ @author: betobyte / threescript.com
+ @author: ivan / threescript.com
+ */
+ 
+ /**
+  * Initialize a container
+  * @param {String} id - container element id
+  * @param {Renderer} renderer - renderer object
+  */
+ function container(id, renderer) {
    if (!renderer)
       return null;
    var c = document.getElementById(id);
@@ -13,6 +23,12 @@
    return c;
 }
 
+/**
+ * Bind resize event on window, update the view size according of window size
+ * @param {Container} container - container object
+ * @param {Camera} camera - camera object
+ * @param {Renderer} renderer - renderer object
+ */
 function resize(container, camera, renderer) {
    var onresize = function() {
       if (!container)
