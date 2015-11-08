@@ -26,7 +26,7 @@ var cc = ccam = cubecam = cubecamera = function(n, f, cr) {
  * @returns {Object} perspective camera
  */
 
-var oc = ocam = ortho = orthocam = ortographic = ortographic_camera = function(l, r, t, b, n, f) {
+var ocam = ortographic_camera = function(l, r, t, b, n, f) {
    return new THREE.OrthographicCamera(l, r, t, b, n, f);
 };
 
@@ -39,6 +39,6 @@ var oc = ocam = ortho = orthocam = ortographic = ortographic_camera = function(l
  * @returns {Object} Ortographic Camera
  */
 
-var pc = pcam = persp = perspcam = perspective = perpective_camera = function(fov, a, n, f) {
+var pcam = perspective_camera = function(fov, a, n, f) {
    return new THREE.PerspectiveCamera(fov, a, n, f);
 };
