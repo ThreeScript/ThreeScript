@@ -1,47 +1,47 @@
-function linemat(parameters) {
+var linemat = line_basic_material = function (parameters) {
    return new THREE.LineBasicMaterial(parameters);
-}
+};
 
-function dashmat(parameters) {
+var dashmat = line_dashed_material = function (parameters) {
    return new THREE.LineDashedMaterial(parameters);
-}
+};
 
-function basmat(parameters) {
+var basmat = mesh_basic_material = function (parameters) {
    return new THREE.MeshBasicMaterial(parameters);
-}
+};
 
-function depmat(parameters) {
+var depmat = mesh_depth_material = function (parameters) {
    return new THREE.MeshDepthMaterial(parameters);
-}
+};
 
-function lammat(parameters) {
+var lammat = mesh_lambert_material = function (parameters) {
    return new THREE.MeshLambertMaterial(parameters);
-}
+};
 
-function normat(parameters) {
+var normat = mesh_normal_material = function (parameters) {
    return new THREE.MeshNormalMaterial(parameters);
-}
+};
 
-function phomat(parameters) {
+var phomat = mesh_phong_material = function (parameters) {
    return new THREE.MeshPhongMaterial(parameters);
-}
+};
 
-function mulmat(parameters) {
-   return new THREE.MeshPhongMaterial(parameters);
-}
+var mulmat = multi_material = function (parameters) {
+   return new THREE.MultiMaterial(parameters);
+};
 
-function poimat(parameters) {
+var poimat = mesh_phong_material = function (parameters) {
    return new THREE.MeshPhongMaterial(parameters);
-}
+};
 
-function rawmat(parameters) {
-   return new THREE.MeshPhongMaterial(parameters);
-}
+var rawmat = raw_shader_material = function (parameters) {
+   return new THREE.RawShaderMaterial(parameters);
+};
 
-function shamat(parameters) {
-   return new THREE.MeshPhongMaterial(parameters);
-}
+var shamat = shader_material = function (parameters) {
+   return new THREE.ShaderMaterial(parameters);
+};
 
-function sprimat(parameters) {
-   return new THREE.MeshPhongMaterial(parameters);
-}
+var sprimat = sprite_material = function (parameters) {
+   return new THREE.SpriteMaterial(parameters);
+};
