@@ -27,7 +27,7 @@ var boxgeo = box_geometry = function(w, h, d, ws, hs, ds) {
  * @returns {Object} Returns a new THREE.CircleGeometry circle geometry object.
  */
 
-var cirgeo = circle = circle_geometry = function(r, s, ts, tl) {
+var cirgeo = circle_geometry = function(r, s, ts, tl) {
    return new THREE.CircleGeometry(r, s, ts, tl);
 };
 
