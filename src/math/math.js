@@ -1,10 +1,10 @@
-function box2(min, max) {
+var box2 = function(min, max) {
    return new THREE.Box2(min, max);
-}
+};
 
-function box3(min, max) {
-   return new THREE.Box2(min, max);
-}
+var box3 = function(min, max) {
+   return new THREE.Box3(min, max);
+};
 
 function color() {
    return new THREE.Color(color);
@@ -46,8 +46,8 @@ function ray(origin, direction) {
    return new THREE.Ray(origin, direction);
 }
 
-function sphgeo(a, b, c, d, radius) {
-   return new THREE.SphereGeometry(a, b, c, d);
+function sphere(center, radius) {
+   return new THREE.Sphere(center, radius);
 }
 
 function spline() {

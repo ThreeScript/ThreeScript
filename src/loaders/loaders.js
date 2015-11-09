@@ -10,9 +10,9 @@
  * @param {function} onProgress - onProgress callback
  * @param {function} onError - onError callback
  */
-var load_json = function( url, onLoad, onProgress, onError ) {
-	var loader = new THREE.JSONLoader();
-	loader.load(url, onLoad, onProgress, onError);
+var loajso = load_json = function(url, onLoad, onProgress, onError) {
+   var loader = new THREE.JSONLoader();
+   loader.load(url, onLoad, onProgress, onError);
 };
 
 /**
@@ -22,9 +22,9 @@ var load_json = function( url, onLoad, onProgress, onError ) {
  * @param {function} onProgress - onProgress callback
  * @param {function} onError - onError callback
  */
-var load_texture = function( url, onLoad, onProgress, onError ) {
-	var loader = new THREE.TextureLoader();
-	loader.load(url, onLoad, onProgress, onError);
+var texloa = texture_loader = function(url, onLoad, onProgress, onError) {
+   var loader = new THREE.TextureLoader();
+   loader.load(url, onLoad, onProgress, onError);
 };
 
 /**
@@ -34,7 +34,8 @@ var load_texture = function( url, onLoad, onProgress, onError ) {
  * @param {function} onProgress - onProgress callback
  * @param {function} onError - onError callback
  */
-var load_material = function( url, onLoad, onProgress, onError ) {
-	var loader = new THREE.MaterialLoader();
-	loader.load(url, onLoad, onProgress, onError);
+
+var loadmat = load_material = function(url, onLoad, onProgress, onError) {
+   var loader = new THREE.MaterialLoader();
+   loader.load(url, onLoad, onProgress, onError);
 };
