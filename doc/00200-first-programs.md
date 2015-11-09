@@ -2,21 +2,28 @@ The first program creates a basic animated scene.
 
 The fist to do is to create the scene object.
 
-´´´javascript
+´´´js
+
 var s = scene();
+
 ´´´
 
 So create the renderer object, assigning it in r variable.
 
-´´´javascript
-var r = wrend({antiAlias: true},0xeeeeee);
 ´´´
 
-´´´javascript
 var r = wrend({antiAlias: true},0xeeeeee);
+
 ´´´
 
-´´´javascript
+´´´
+
+var r = wrend({antiAlias: true},0xeeeeee);
+
+´´´
+
+´´´
+
 var s = scene();
 
 var r = wrend({antiAlias: true},0xeeeeee);
@@ -80,4 +87,5 @@ function loopCallback(loop) {
    sp.position.x = 20 + ( 10 * (Math.cos(step)));
    sp.position.y = 2 + ( 10 * Math.abs(Math.sin(step)));
 };
+
 ´´´
