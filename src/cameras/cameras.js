@@ -42,3 +42,14 @@ var ocam = ortographic_camera = function(l, r, t, b, n, f) {
 var pcam = perspective_camera = function(fov, a, n, f) {
    return new THREE.PerspectiveCamera(fov, a, n, f);
 };
+
+var updpromat = update_projection_matrix = function(c) {
+   c.updateProjectionMatrix();
+};
+
+var lookat = function(from, to) {
+   if (from.lookAt && to && to.position) {
+      from.lookAt(to.position);
+      return true;
+   }
+};

@@ -1,35 +1,70 @@
-function scene() {
+var scene = function() {
    return new THREE.Scene();
-}
+};
 
-function fog(color, near, far) {
+var fog = function(color, near, far) {
    return new THREE.Fog(color, near, far);
-}
+};
 
-function fogexp2(color, density) {
+var fogexp2 = function(color, density) {
    THREE.FogExp2(color, density);
-}
+};
 
-function add(receiver) {
+var objadd = object_add = function(receiver) {
    var l = arguments.length;
    for (var i = 1; i < l; i++) {
-      receiver.add(arguments[i]);
+      if (receiver.add)
+         receiver.add(arguments[i]);
    }
-}
+};
 
-function addsce(scene) {
+var objsub = object_sub = function(receiver) {
    var l = arguments.length;
    for (var i = 1; i < l; i++) {
-      scene.add(arguments[i]);
+      if (receiver.remove)
+         receiver.remove(arguments[i]);
    }
-}
+};
 
-function subsce(scene) {
-   var l = arguments.length;
-   for (var i = 1; i < l; i++) {
-      scene.remove(arguments[i]);
-   }
-}
+var objdo = function(obj, x, y, z) {
+   if (!obj)
+      return null;
+   if (x)
+      obj.x = x;
+   if (y)
+      obj.y = y;
+   if (z)
+      obj.z = z;
+   return obj;
+};
+
+var objpos = object_position = function(obj, x, y, z) {
+   if (obj)
+      return objdo(obj.position, x, y, z);
+   else
+      return null;
+};
+
+var objrot = object_rotation = function(obj, x, y, z) {
+   if (obj)
+      return objdo(obj.rotation, x, y, z);
+   else
+      return null;
+};
+
+var objsca = object_scale = function(obj, x, y, z) {
+   if (obj)
+      return objdo(obj.scale, x, y, z);
+   else
+      return null;
+};
+
+var objtra = object_translation = function(obj, x, y, z) {
+   if (obj)
+      return objdo(obj.translation, x, y, z);
+   else
+      return null;
+};
 
 function cassha() {
    var l = arguments.length;

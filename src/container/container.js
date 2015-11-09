@@ -1,14 +1,33 @@
- /**
+/**
  @author: betobyte / threescript.com
  @author: ivan / threescript.com
  */
- 
- /**
-  * Initialize a container
-  * @param {String} id - container element id
-  * @param {Renderer} renderer - renderer object
-  */
- function container(id, renderer) {
+
+var tsg = tsglobal = {
+   mouse: {
+      leftButtonDown: false,
+      moveY: true,
+      event: {x: 0, y: 0, z: 0},
+      last: {x: 0, y: 0, z: 0},
+      delta: {x: 0, y: 0, z: 0},
+      velocity: {x: 1, y: 2, z: 4},
+      direction: {x: -1, y: 1, z: -1}
+   }
+};
+
+var tsgm = tsg.mouse;
+var tsgmevent = tsgm.event;
+var tsgmlast = tsgm.last;
+var tsgmdelta = tsgm.delta;
+var tsgmvel = tsgm.velocity;
+var tsgmdir = tsgm.direction;
+
+/**
+ * Initialize a container
+ * @param {String} id - container element id
+ * @param {Renderer} renderer - renderer object
+ */
+function container(id, renderer) {
    if (!renderer)
       return null;
    var c = document.getElementById(id);
@@ -60,60 +79,73 @@ function resize(container, camera, renderer) {
 var containerControlType = 'positional';
 var targetRotationOnMouseDown = null;
 
-function mouseon(container, movingObject, xFactor, yFactor, zFactor) {
-   var lastX = null;
-   var lastY = null;
-   var lastZ = null;
-   var deltaX = null;
-   var deltaY = null;
-   var deltaZ = null;
-   var moveY = true;
+function mouseon(container, movingObject, moveY, velocity, direction) {
+   if (moveY)
+      tsgm.moveY = moveY;
+   if (velocity) {
+      if (velocity.x)
+         tsgmvel.x = velocity.x;
+      if (velocity.x)
+         tsgmvel.y = velocity.y;
+      if (velocity.x)
+         tsgmvel.z = velocity.d;
+   }
+   if (direction) {
+      if (direction.x)
+         tsgmdir.x = direction.x;
+      if (direction.x)
+         tsgmdir.y = direction.y;
+      if (direction.x)
+         tsgmdir.z = direction.d;
+   }
    container.addEventListener('mousedown', function(event) {
-      leftButtonDown = true;
+      tsgm.leftButtonDown = true;
       mouseXOnMouseDown = event.clientX - container.hw;
       if (containerControlType === 'rotational') {
          targetRotationOnMouseDown = targetRotation;
       } else if (containerControlType === 'positional') {
-         deltaX = 0;
-         deltaY = 0;
-         deltaZ = 0;
-         lastX = event.clientX;
-         lastY = event.clientY;
-         lastZ = event.clientY;
+         tsgmdelta.x = 0;
+         tsgmdelta.y = 0;
+         tsgmdelta.z = 0;
+         tsgmlast.x = event.clientX;
+         tsgmlast.y = event.clientY;
+         tsgmlast.z = event.clientY;
       }
    });
    var mousemove = function(event) {
       if (!(event.buttons && 1))
          return;
       if (containerControlType === 'rotational') {
-         mouseX = event.clientX - container.hw;
-         targetRotation = targetRotationOnMouseDown + (mouseX - mouseXOnMouseDown) * 0.02;
+         tsgmevent.x = event.clientX - container.hw;
+         targetRotation = targetRotationOnMouseDown + (eventX - mouseXOnMouseDown) * 0.02;
       } else if (containerControlType === 'positional') {
          var x = event.clientX;
          var y = event.clientY;
-         deltaX = (x - lastX) * xFactor;
-         if (moveY) {
-            deltaY = (y - lastY) * yFactor;
-            deltaZ = 0;
+         tsgmdelta.x = (x - tsgmlast.x) * tsgmvel.x * tsgmdir.x;
+         if (tsgm.moveY) {
+            tsgmdelta.y = (y - tsgmlast.y) * tsgmvel.y * tsgmdir.y;
+            tsgmdelta.z = 0;
          } else {
-            deltaY = 0;
-            deltaZ = (y - lastY) * zFactor;
+            tsgmdelta.y = 0;
+            tsgmdelta.z = (y - tsgmlast.z) * tsgmvel.z * tsgmdir.z;
          }
-         movingObject.position.x += deltaX;
-         movingObject.position.y += deltaY;
-         movingObject.position.z += deltaZ;
-         lastX = x;
-         lastY = y;
+         var mp = movingObject.position;
+         mp.x += tsgmdelta.x;
+         mp.y += tsgmdelta.y;
+         mp.z += tsgmdelta.z;
+         tsgmlast.x = x;
+         tsgmlast.y = y;
       }
    };
    container.addEventListener('mousemove', mousemove);
    container.addEventListener('mouseup', function() {
-      deltaX = 0;
-      deltaY = 0;
-      deltaZ = 0;
+      tsgm.leftButtonDown = false;
+      tsgmdelta.x = 0;
+      tsgmdelta.y = 0;
+      tsgmdelta.z = 0;
    });
    container.addEventListener('dblclick', function(event) {
-      moveY = !moveY;
+      tsgm.moveY = !tsgm.moveY;
       mousemove(event);
    });
 }
