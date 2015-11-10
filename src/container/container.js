@@ -80,23 +80,23 @@ var containerControlType = 'positional';
 var targetRotationOnMouseDown = null;
 
 function mouseon(container, movingObject, moveY, velocity, direction) {
-   if (moveY)
+   if (moveY === true || (moveY === false))
       tsgm.moveY = moveY;
    if (velocity) {
-      if (velocity.x)
+      if (velocity.x || velocity.x === 0)
          tsgmvel.x = velocity.x;
-      if (velocity.x)
+      if (velocity.y || velocity.y === 0)
          tsgmvel.y = velocity.y;
-      if (velocity.x)
-         tsgmvel.z = velocity.d;
+      if (velocity.z || velocity.z === 0)
+         tsgmvel.z = velocity.z;
    }
    if (direction) {
-      if (direction.x)
+      if (direction.x === -1 || direction.x === 1)
          tsgmdir.x = direction.x;
-      if (direction.x)
+      if (direction.y === -1 || direction.y === 1)
          tsgmdir.y = direction.y;
-      if (direction.x)
-         tsgmdir.z = direction.d;
+      if (direction.z === -1 || direction.z === 1)
+         tsgmdir.z = direction.z;
    }
    container.addEventListener('mousedown', function(event) {
       tsgm.leftButtonDown = true;
