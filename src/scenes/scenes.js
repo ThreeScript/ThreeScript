@@ -82,24 +82,32 @@ function notcassha() {
 
 var stopraf = false;
 
-function animate(renderer, scene, camera, startCallback, animCallback) {
+var animate = function(r, s, c, startCallback, animCallback, renderCallback) {
+   var animator = {
+      renderer: r,
+      scene: s,
+      camera: c};
+   function localRender() {
+      if (renderCallback)
+         renderCallback(s, c);
+      else
+         render(r, s, c);
+   }
    function animationFrame() {
-      if (!stopraf) {
+      if (!stopraf)
          requestAnimationFrame(animationFrame);
-      }
       if (animCallback)
-         animCallback(this);
-      renderer.clear();
-      renderer.render(scene, camera);
+         animCallback(animator);
+      localRender();
    }
    stopraf = false;
    if (startCallback)
-      startCallback(this);
-   renderer.render(scene, camera);
+      startCallback(animator);
+   localRender();
    animationFrame();
-}
+};
 
-function render(renderer, scene, camera) {
+var render = function(renderer, scene, camera) {
    renderer.clear();
    renderer.render(scene, camera);
-}
+};

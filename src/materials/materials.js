@@ -51,24 +51,10 @@ var sprimat = sprite_material = function(parameters) {
 };
 
 var bascolmat = mesh_basic_colors_material = function(colors) {
-
    if (!colors || !colors.length || colors.length !== 6)
       return null;
-
    var matarr = [];
-   for (var i = 0; i < 6; i++) {
+   for (var i = 0; i < 6; i++)
       matarr.push(basmat({color: colors[i]}));
-   }
-
-// order to add materials: x+,x-,y+,y-,z+,z-
-   /*
-    matArray.push(basmat({color: 0xff3333}));
-    matArray.push(basmat({color: 0xff8800}));
-    matArray.push(basmat({color: 0xffff33}));
-    matArray.push(basmat({color: 0x33ff33}));
-    matArray.push(basmat({color: 0x3333ff}));
-    matArray.push(basmat({color: 0x8833ff}));
-    */
    return facmat(matarr);
 };
-

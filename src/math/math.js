@@ -62,10 +62,10 @@ function vec2(x, y) {
    return new THREE.Vector2(x, y);
 }
 
-function vec3() {
+function vec3(x, y, z) {
    return new THREE.Vector3(x, y, z);
 }
 
-function vec4() {
+function vec4(x, y, z, w) {
    return new THREE.Vector4(x, y, z, w);
 }

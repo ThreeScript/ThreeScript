@@ -10,6 +10,10 @@
 // t: type,
 // a: anisotropy
 
-function cantex(c, m, ws, wt, mg, mn, f, t, a) {
+var cantex = canvas_texture = function(c, m, ws, wt, mg, mn, f, t, a) {
    return new THREE.CanvasTexture(c, m, ws, wt, mg, mn, f, t, a);
-}
+};
+
+var loatexcub = load_texture_cube = function(urls) {
+   return THREE.ImageUtils.loadTextureCube(urls);
+};

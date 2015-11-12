@@ -44,12 +44,13 @@ function container(id, renderer) {
 
 /**
  * Bind resize event on window, update the view size according of window size
- * @param {Container} container - container object
- * @param {Camera} camera - camera object
- * @param {Renderer} renderer - renderer object
+ * @param {Object} container - container object
+ * @param {Object} camera - camera object
+ * @param {Object} renderer - renderer object
+ * @param {Function} callback - callback to resize
  */
-function resize(container, camera, renderer) {
-   var onresize = function() {
+function resize(container, camera, renderer, callback) {
+   var onresize = function(event) {
       if (!container)
          return;
 
@@ -64,11 +65,16 @@ function resize(container, camera, renderer) {
 
       if (camera) {
          camera.aspect = w / h;
-         camera.updateProjectionMatrix();
+         if (camera.updateProjectionMatrix)
+            camera.updateProjectionMatrix();
       }
 
       if (renderer)
          renderer.setSize(w, h);
+
+      if (callback) {
+         callack(event);
+      }
    };
    container.onresize = onresize;
    window.addEventListener('resize', function() {
@@ -149,3 +155,10 @@ function mouseon(container, movingObject, moveY, velocity, direction) {
       mousemove(event);
    });
 }
+
+var perlooxyz = perform_loop_xyz = function(start, end, step, callback) {
+   for (var x = start; x < end; x += step)
+      for (var y = start; y < end; y += step)
+         for (var z = start; z < end; z += step)
+            callback(x, y, z);
+};
