@@ -10,7 +10,7 @@ var wrend = webgl_renderer = function(parameters, clearColor, pixelRatio) {
    return r;
 };
 
-var pixrad = set_pixel_ratio = function(r, pixelRatio) {
+var pixrat = set_pixel_ratio = function(r, pixelRatio) {
    if (r && r.setPixelRatio)
       r.setPixelRatio(pixelRatio);
 };

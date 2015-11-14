@@ -49,8 +49,8 @@ function container(id, renderer) {
  * @param {Object} renderer - renderer object
  * @param {Function} callback - callback to resize
  */
-function resize(container, camera, renderer, callback) {
-   var onresize = function(event) {
+function onresize(container, camera, renderer, callback) {
+   window.addEventListener('resize', function(event) {
       if (!container)
          return;
 
@@ -75,17 +75,13 @@ function resize(container, camera, renderer, callback) {
       if (callback) {
          callack(event);
       }
-   };
-   container.onresize = onresize;
-   window.addEventListener('resize', function() {
-      container.onresize();
    });
 }
 
 var containerControlType = 'positional';
 var targetRotationOnMouseDown = null;
 
-function mouseon(container, movingObject, moveY, velocity, direction) {
+function onmouse(container, movingObject, moveY, velocity, direction) {
    if (moveY === true || (moveY === false))
       tsgm.moveY = moveY;
    if (velocity) {

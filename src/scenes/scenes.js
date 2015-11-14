@@ -66,19 +66,33 @@ var objtra = object_translation = function(obj, x, y, z) {
       return null;
 };
 
-function cassha() {
+var cassha = function() {
    var l = arguments.length;
    for (var i = 0; i < l; i++) {
       arguments[i].castShadow = true;
    }
-}
+};
 
-function notcassha() {
+var notcassha = function() {
    var l = arguments.length;
    for (var i = 0; i < l; i++) {
       arguments[i].castShadow = false;
    }
-}
+};
+
+var recsha = function() {
+   var l = arguments.length;
+   for (var i = 0; i < l; i++) {
+      arguments[i].receiveShadow = true;
+   }
+};
+
+var notrecsha = function() {
+   var l = arguments.length;
+   for (var i = 0; i < l; i++) {
+      arguments[i].receiveShadow = false;
+   }
+};
 
 var stopraf = false;
 

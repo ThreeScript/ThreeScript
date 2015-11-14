@@ -14,7 +14,7 @@ var dashmat = line_dashed_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function basmat or mesh_basic_material returns a new mesh basic material object.
 
 ```js
 var basmat = mesh_basic_material = function(parameters) {
@@ -22,7 +22,7 @@ var basmat = mesh_basic_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function depmat or mesh_depth_material returns a new mesh depth material object.
 
 ```js
 var depmat = mesh_depth_material = function(parameters) {
@@ -30,7 +30,7 @@ var depmat = mesh_depth_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function lammat or mesh_lambert_material returns a new mesh lambert material object.
 
 ```js
 var lammat = mesh_lambert_material = function(parameters) {
@@ -38,7 +38,7 @@ var lammat = mesh_lambert_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function normat or mesh_normal_material returns a new mesh normal material object.
 
 ```js
 var normat = mesh_normal_material = function(parameters) {
@@ -46,7 +46,7 @@ var normat = mesh_normal_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function phomat or mesh_phong_material returns a new _ object.
 
 ```js
 var phomat = mesh_phong_material = function(parameters) {
@@ -62,7 +62,7 @@ var mulmat = multi_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function facmat or facmat returns a new _ object.
 
 ```js
 var facmat = mesh_face_material = function(parameters) {
@@ -70,15 +70,15 @@ var facmat = mesh_face_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function poimat or points_material returns a new points material object.
 
 ```js
-var poimat = mesh_phong_material = function(parameters) {
-   return new THREE.MeshPhongMaterial(parameters);
+var poimat = points_material = function(parameters) {
+   return new THREE.PointsMaterial(parameters);
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function rawmat or raw_shader_material returns a new _ object.
 
 ```js
 var rawmat = raw_shader_material = function(parameters) {
@@ -86,7 +86,7 @@ var rawmat = raw_shader_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function shamat or shader_material returns a new shader material object.
 
 ```js
 var shamat = shader_material = function(parameters) {
@@ -94,7 +94,7 @@ var shamat = shader_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function sprimat or sprite_material returns a new sprite material object.
 
 ```js
 var sprimat = sprite_material = function(parameters) {
@@ -102,7 +102,7 @@ var sprimat = sprite_material = function(parameters) {
 };
 ```
 
-The function _ or _ returns a new _ object.
+The function bascolmat or mesh_basic_colors_material returns a new mesh basic colors material object.
 
 ```js
 var bascolmat = mesh_basic_colors_material = function(colors) {

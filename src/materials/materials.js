@@ -2,7 +2,7 @@ var linemat = line_basic_material = function(parameters) {
    return new THREE.LineBasicMaterial(parameters);
 };
 
-var dashmat = line_dashed_material = function(parameters) {
+var dasmat = line_dashed_material = function(parameters) {
    return new THREE.LineDashedMaterial(parameters);
 };
 
@@ -34,7 +34,7 @@ var facmat = mesh_face_material = function(parameters) {
    return new THREE.MeshFaceMaterial(parameters);
 };
 
-var poimat = mesh_phong_material = function(parameters) {
+var poimat = mesh_points_material = function(parameters) {
    return new THREE.MeshPhongMaterial(parameters);
 };
 
