@@ -1,0 +1,29 @@
+{
+    "outputs": [
+        {
+            "inputs": [
+               "src/cameras/cameras.js",
+               "src/container/container.js",
+               "src/core/core.js",
+               "src/examples/js/controls.js",
+               "src/examples/js/effects.js",
+               "src/extras/extras.js",
+               "src/extras/geometries/geometries.js",
+               "src/lights/lights.js",
+               "src/loaders/loaders.js",
+               "src/materials/materials.js",
+               "src/math/math.js",
+               "src/meshes/meshes.js",
+               "src/objects/objects.js",
+               "src/renderers/renderers.js",
+               "src/scenes/scenes.js",
+               "src/textures/textures.js"
+            ],
+            "output": "dist/threescript.min.js",
+            "generateMap": true,
+            "mangle": true,
+            "Precompile": true,
+            "isolate": false
+        }
+    ]
+}
