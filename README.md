@@ -20,3 +20,13 @@ The main functions are:
 - wrend(parameters);
 - boxgeo(w, h, d, ): create a box with the width 'w', height 'h', depth 'd', width segments 'ws', height segments 'hs', depth segments 'ds';
 - sphgeo(r, ws, hs, ps, pl, ts, tl): creates a sphere geometry with the radius 'r', width segments 'ws', height segments, phi start 'ps', phiLength 'pl', thetaStart 'ts', thetaLength 'tl';
+
+## Usage
+
+Download the minified library and include it with the [three.js](https://github.com/mrdoob/three.js) library in your html.
+
+```
+<script src="js/three.min.js"></script>
+<script src="js/threescript.min.js"></script>
+```
+You can use one of the scripts in 'utils/build' folder to create your custom build.
