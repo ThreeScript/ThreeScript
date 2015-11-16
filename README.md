@@ -8,7 +8,7 @@ TS was launched in 2015 By Roberto Plácido Teixeira and Ivan Moura Miranda.
 ThreeScript is the language script using function returning Three.js instantiated classes.
 
 for example, 'scene':
-```
+```javascript
 function scene() {
   return THREE.Scene();
 }
@@ -25,7 +25,7 @@ The main functions are:
 
 Download the minified library and include it with the [three.js](https://github.com/mrdoob/three.js) library in your html.
 
-```
+```html
 <script src="js/three.min.js"></script>
 <script src="js/threescript.min.js"></script>
 ```
