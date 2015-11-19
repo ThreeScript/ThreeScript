@@ -10,16 +10,14 @@ Internally you define a view matrix exactly the same as before. However, then th
 matrix is formed differently.
 
 
-Command              | Parameters | Description       
----------------------|------------|---------------------------------------------------------------------------------------
-pcam(fov, a, n, f)   | fov        | > Field of view – this is part of scene that can be seen
-                     |            | > from the position of the camera. As you probably 
-                     |            | > know, we, humans, have almost 180-degree field of view, 
-                     |            | > while some birds might even have a complete 360-degree field of view.
-                     |            | > However, for computers, we usually use the field of view between 60 and 90 degrees.
-- Perspective Camera | aspect     | Aspect of width / height.
-                     | near       | Near rendering distance.
-                     | far        | Far rendering distance.
+Function              | Parameters | Description       
+----------------------|------------|--------------------------------------------------------------
+pcam(fov, a, n, f)    | fov        | Field of view – this is part of scene that can be seen from the position of the camera.
+                      |            | As you probably know, we, humans, have almost 180-degree field of view, while some birds might even have a complete 360-degree field of view.
+                      |            | However, for computers, we usually use the field of view between 60 and 90 degrees.
+or perspective_camera | aspect     | Aspect of width / height.
+                      | near       | Near rendering distance.
+                      | far        | Far rendering distance.
 
 The ortographic camera projection isn’t normally how we directly perceive the world, but it’s a form we
 commonly use nonetheless. For example, assembly instructions usually show an orthographic
