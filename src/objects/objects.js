@@ -1,3 +1,4 @@
-function mesh(geometry, material) {
+TS.mesh = function (geometry, material) {
    return new THREE.Mesh(geometry, material);
-}
+};
+

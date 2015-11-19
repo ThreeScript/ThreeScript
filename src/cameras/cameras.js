@@ -11,23 +11,23 @@
  * @returns {Object} cube camera
  */
 
-var ccam = cube_camera = function(n, f, cr) {
-   return new THREE.CubeCamera(n, f, cr);
+TS.cube_camera = TS.cubcam = function(near, far, cubeResolution) {
+   return new THREE.CubeCamera(near, far, cubeResolution);
 };
 
 /**
  * returns a new THREE.OrthographicCamera orthographic camera object.
- * @param {Number} l - left
- * @param {Number} r - right
- * @param {Number} t - top
- * @param {Number} b - bottom
- * @param {Number} n - near
- * @param {Number} f - far
+ * @param {Number} left
+ * @param {Number} right
+ * @param {Number} top
+ * @param {Number} bottom
+ * @param {Number} near
+ * @param {Number} far
  * @returns {Object} perspective camera
  */
 
-var ocam = ortographic_camera = function(l, r, t, b, n, f) {
-   return new THREE.OrthographicCamera(l, r, t, b, n, f);
+TS.ortographic_camera = TS.ortcam = function(left, right, top, bottom, near, far) {
+   return new THREE.OrthographicCamera(left, right, top, bottom, near, far);
 };
 
 /**
@@ -39,16 +39,18 @@ var ocam = ortographic_camera = function(l, r, t, b, n, f) {
  * @returns {Object} Ortographic Camera
  */
 
-var pcam = perspective_camera = function(fov, a, n, f) {
+TS.perspective_camera = TS.percam = function(fov, a, n, f) {
    return new THREE.PerspectiveCamera(fov, a, n, f);
 };
 
-var updpromat = update_projection_matrix = function(c) {
-   c.updateProjectionMatrix();
+TS.updpromat = function(camera) {
+   camera.updateProjectionMatrix();
 };
 
-var lookat = function(from, to) {
-   if (from.lookAt && to && to.position) {
+TS.update_projection_matrix = TS.updpromat;
+
+TS.lookat = function(from, to) {
+   if (from && from.lookAt && to && to.position) {
       from.lookAt(to.position);
       return true;
    }

@@ -1,16 +1,16 @@
-var wrend = webgl_renderer = function(parameters, clearColor, pixelRatio) {
+TS.wrend = TS.webgl_renderer = function(parameters, clearColor, pixelRatio) {
    var r = new THREE.WebGLRenderer(parameters);
    if (pixelRatio)
-      r.setPixelRatio(pixelRatio)
+      this.pixrat(r, pixelRatio);
    else
-      r.setPixelRatio(window.devicePixelRatio);
+      this.pixrat(r, window.devicePixelRatio);
    if (!clearColor)
       clearColor = 0xFFFFFF;
-   r.setClearColor(new THREE.Color(clearColor));
+   r.setClearColor(TS.color(clearColor));
    return r;
 };
 
-var pixrat = set_pixel_ratio = function(r, pixelRatio) {
+TS.pixrat = TS.set_pixel_ratio = function(r, pixelRatio) {
    if (r && r.setPixelRatio)
       r.setPixelRatio(pixelRatio);
 };

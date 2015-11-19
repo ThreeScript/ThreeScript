@@ -1,4 +1,4 @@
-var firpercon = first_person_control = function(object, domElement, ms, ls, lon, fz) {
+TS.firpercon = first_person_control = function(object, domElement, ms, ls, lon, fz) {
    var fpc = new THREE.FirstPersonControls(object, domElement);
    if (ms)
       fpc.movementSpeed = ms;
@@ -10,3 +10,5 @@ var firpercon = first_person_control = function(object, domElement, ms, ls, lon,
       fpc.freeze;
    return fpc;
 };
+
+TS.first_person_control = TS.firpercon;

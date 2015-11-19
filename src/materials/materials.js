@@ -1,60 +1,60 @@
-var linemat = line_basic_material = function(parameters) {
+TS.linemat = TS.line_basic_material = function(parameters) {
    return new THREE.LineBasicMaterial(parameters);
 };
 
-var dasmat = line_dashed_material = function(parameters) {
+TS.dasmat = TS.line_dashed_material = function(parameters) {
    return new THREE.LineDashedMaterial(parameters);
 };
 
-var basmat = mesh_basic_material = function(parameters) {
+TS.basmat = TS.mesh_basic_material = function(parameters) {
    return new THREE.MeshBasicMaterial(parameters);
 };
 
-var depmat = mesh_depth_material = function(parameters) {
+TS.depmat = TS.mesh_depth_material = function(parameters) {
    return new THREE.MeshDepthMaterial(parameters);
 };
 
-var lammat = mesh_lambert_material = function(parameters) {
+TS.lammat = TS.mesh_lambert_material = function(parameters) {
    return new THREE.MeshLambertMaterial(parameters);
 };
 
-var normat = mesh_normal_material = function(parameters) {
+TS.normat = TS.mesh_normal_material = function(parameters) {
    return new THREE.MeshNormalMaterial(parameters);
 };
 
-var phomat = mesh_phong_material = function(parameters) {
+TS.phomat = TS.mesh_phong_material = function(parameters) {
    return new THREE.MeshPhongMaterial(parameters);
 };
 
-var mulmat = multi_material = function(parameters) {
+TS.mulmat = TS.multi_material = function(parameters) {
    return new THREE.MultiMaterial(parameters);
 };
 
-var facmat = mesh_face_material = function(parameters) {
+TS.facmat = TS.mesh_face_material = function(parameters) {
    return new THREE.MeshFaceMaterial(parameters);
 };
 
-var poimat = mesh_points_material = function(parameters) {
+TS.poimat = TS.mesh_points_material = function(parameters) {
    return new THREE.MeshPhongMaterial(parameters);
 };
 
-var rawmat = raw_shader_material = function(parameters) {
+TS.rawmat = TS.raw_shader_material = function(parameters) {
    return new THREE.RawShaderMaterial(parameters);
 };
 
-var shamat = shader_material = function(parameters) {
+TS.shamat = TS.shader_material = function(parameters) {
    return new THREE.ShaderMaterial(parameters);
 };
 
-var sprimat = sprite_material = function(parameters) {
+TS.sprimat = TS.sprite_material = function(parameters) {
    return new THREE.SpriteMaterial(parameters);
 };
 
-var bascolmat = mesh_basic_colors_material = function(colors) {
+TS.bascolmat = TS.mesh_basic_colors_material = function(colors) {
    if (!colors || !colors.length || colors.length !== 6)
       return null;
-   var matarr = [];
+   var matarr = []; // msterial array
    for (var i = 0; i < 6; i++)
-      matarr.push(basmat({color: colors[i]}));
-   return facmat(matarr);
+      matarr.push(TS.basmat({color: colors[i]}));
+   return TS.facmat(matarr);
 };

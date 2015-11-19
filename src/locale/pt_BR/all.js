@@ -1,134 +1,134 @@
 // cameras / Câmeras
 
-var camera_perspectiva = pcam;
-var camera_ortografica = ocam;
-var camera_cubica = ccam;
-var alterar_matriz_de_projecao = updpromat;
-var olhar_para = lookat;
+TS.camera_perspectiva = TS.percam;
+TS.camera_ortografica = TS.ortcam;
+TS.camera_cubica = TS.cubcam;
+TS.alterar_matriz_de_projecao = TS.updpromat;
+TS.olhar_para = TS.lookat;
 
 // container / elemento_dom
 
-var elemento_dom = container;
-var ao_redimensionar = onresize;
-var ao_rato = onmouse;
+TS.elemento_dom = TS.container;
+TS.ao_redimensionar = TS.onresize;
+TS.ao_rato = TS.onmouse;
 
 // exemplos
 
-var controle_de_primeira_pessoa = first_person_control;
-var efeito_de_anaglifo = anaglyph_effect;
+TS.controle_de_primeira_pessoa = TS.first_person_control;
+TS.efeito_de_anaglifo = TS.anaglyph_effect;
 
 // extras
 
 // extras/geometries ::  extras/geometrias
 
-var geometria_de_caixa = boxgeo;
-var geometria_de_circulo = cirgeo;
-var geometria_bufferizada_de_circulo = cirbufgeo;
-var geometria_de_cilindro = cylgeo;
-var geometria_de_dodecaedro = dodgeo;
-var geometria_de_borda = edggeo;
-var geometria_de_extrusao = extgeo;
-var geometria_de_icosaedro = icogeo;
-var geometria_de_torno = latgeo;
-var geometria_de_octaedro = octgeo;
-var geometria_parametrica = pargeo;
-var geometria_bufferizada_de_plano = plabufgeo;
-var geometria_de_plano = plageo;
-var geometria_de_poliedro = polgeo;
-var geometria_de_anel = ringeo;
-var geometria_de_forma = shageo;
-var geometria_bufferizada_de_esfera = sphbufgeo;
-var geometria_de_esfera = sphgeo;
-var geometria_de_tetraedro = tetgeo;
-var geometria_de_texto = txtgeo;
-var geometria_de_toro = torgeo;
-var geometria_de_toro_de_no = knogeo;
-var geometria_de_tubo = tubgeo;
-var geometria_de_fios = wirgeo;
+TS.geometria_de_caixa = TS.boxgeo;
+TS.geometria_de_circulo = TS.cirgeo;
+TS.geometria_bufferizada_de_circulo = TS.cirbufgeo;
+TS.geometria_de_cilindro = TS.cylgeo;
+TS.geometria_de_dodecaedro = TS.dodgeo;
+TS.geometria_de_borda = TS.edggeo;
+TS.geometria_de_extrusao = TS.extgeo;
+TS.geometria_de_icosaedro = TS.icogeo;
+TS.geometria_de_torno = TS.latgeo;
+TS.geometria_de_octaedro = TS.octgeo;
+TS.geometria_parametrica = TS.pargeo;
+TS.geometria_bufferizada_de_plano = TS.plabufgeo;
+TS.geometria_de_plano = TS.plageo;
+TS.geometria_de_poliedro = TS.polgeo;
+TS.geometria_de_anel = TS.ringeo;
+TS.geometria_de_forma = TS.shageo;
+TS.geometria_bufferizada_de_esfera = TS.sphbufgeo;
+TS.geometria_de_esfera = TS.sphgeo;
+TS.geometria_de_tetraedro = TS.tetgeo;
+TS.geometria_de_texto = TS.txtgeo;
+TS.geometria_de_toro = TS.torgeo;
+TS.geometria_de_toro_de_no = TS.knogeo;
+TS.geometria_de_tubo = TS.tubgeo;
+TS.geometria_de_fios = TS.wirgeo;
 
 // ligths :: luzes
 
-var luz_ambiente = amblig;
-var luz_direcional = dirlig;
-var luz_hemisferica = hemlig;
-var luz_de_holofote = spolig;
-var luz_de_ponto = poilig;
+TS.luz_ambiente = TS.amblig;
+TS.luz_direcional = TS.dirlig;
+TS.luz_hemisferica = TS.hemlig;
+TS.luz_de_holofote = TS.spolig;
+TS.luz_de_ponto = TS.poilig;
 
 // loaders :: carregadores
-var carregar_json = loajso;
-var carregador_de_textura = texloa;
+TS.carregar_json = TS.loajso;
+TS.carregador_de_textura = TS.texloa;
 
 // materials / materiais
 
-var material_de_linha = linemat;
-var material_de_linha_pontilhada = dasmat;
-var material_basico = basmat;
-var material_de_profundidade = depmat;
-var material_lambert = lammat;
-var material_normal = normat;
-var material_phong = phomat;
-var material_multiplo = mulmat;
-var material_de_pontos = poimat;
-var material_de_face = facmat;
-var material_bruto_de_shader = rawmat;
-var material_de_shader = shamat;
-var material_de_duente = sprimat;
-var material_basico_de_cores = mesh_basic_colors_material;
+TS.material_de_linha = TS.linemat;
+TS.material_de_linha_pontilhada = TS.dasmat;
+TS.material_basico = TS.basmat;
+TS.material_de_profundidade = TS.depmat;
+TS.material_lambert = TS.lammat;
+TS.material_normal = TS.normat;
+TS.material_phong = TS.phomat;
+TS.material_multiplo = TS.mulmat;
+TS.material_de_pontos = TS.poimat;
+TS.material_de_face = TS.facmat;
+TS.material_bruto_de_shader = TS.rawmat;
+TS.material_de_shader = TS.shamat;
+TS.material_de_duente = TS.sprimat;
+TS.material_basico_de_cores = TS.mesh_basic_colors_material;
 
 // math :: matematica
 
-var caixa2 = box2;
-var caixa3 = box3;
-var cor =  color;
-// var euler =  euler;
-var tronco =  frustrum;
-var linha3 =  line3;
-var matematica =  math;
-var matriz3 =  matrix3;
-var matriz4 =  matrix4;
-var plano =  plane;
-var quaterniao =  quaternion;
-var raio =  ray;
-var esfera =  sphere;
-var estriado =  spline;
-var triangulo =  triangle;
-var vetor2 =  vec2;
-var vetor3 =  vec3;
-var vetor4 =  vec4;
+TS.caixa2 = TS.box2;
+TS.caixa3 = TS.box3;
+TS.cor = TS. color;
+// TS.euler = TS. euler;
+TS.tronco = TS. frustrum;
+TS.linha3 = TS. line3;
+TS.matematica = TS. math;
+TS.matriz3 = TS. matrix3;
+TS.matriz4 = TS. matrix4;
+TS.plano = TS. plane;
+TS.quaterniao = TS. quaternion;
+TS.raio = TS. ray;
+TS.esfera = TS. sphere;
+TS.estriado = TS. spline;
+TS.triangulo = TS. triangle;
+TS.vetor2 = TS. vec2;
+TS.vetor3 = TS. vec3;
+TS.vetor4 = TS. vec4;
 
 // meshes :: malhas
 
-var malha = mesh;
-var malha_de_caixa = mesbox;
-var malha_de_esfera = messph;
-var malha_de_plano = mespla;
+TS.malha = TS.mesh;
+TS.malha_de_caixa = TS.boxmes;
+TS.malha_de_esfera = TS.sphmes;
+TS.malha_de_plano = TS.plames;
 // renderers :: renderizadores
 
-var renderizador_webgl = wrend;
+TS.renderizador_webgl = TS.wrend;
 
-var relacao_de_pixels = pixrat;
+TS.relacao_de_pixels = TS.pixrat;
 
-var nevoa = fog;
-var nevoa_exponencial_2 = fogexp2;
-var adicionar_objeto = objadd;
-var subtrair_objeto = objsub;
-var realizar_com_o_objeto = objdo;
-var posicionar_objeto = objpos;
-var girar_objeto = objrot;
-var redimensionar_objeto = objsca;
-var levar_objeto = objtra;
-var lancar_sombra = cassha;
-var nao_lancar_sombra = notcassha;
-var receber_sombra = recsha;
-var nao_receber_sombra = notrecsha;
-var animar = animate;
-var processar = renderizar = render;
+TS.nevoa = TS.fog;
+TS.nevoa_exponencial_2 = TS.fogexp2;
+TS.adicionar = TS.add;
+TS.subtrair = TS.sub;
+TS.fazer_com_vetor3 = TS.objto;
+TS.posicionar = TS.pos;
+TS.girar = TS.rot;
+TS.escala = TS.sca;
+TS.deslocamento = TS.tra;
+TS.lancar_sombra = TS.cassha;
+TS.nao_lancar_sombra = TS.notcassha;
+TS.receber_sombra = TS.recsha;
+TS.nao_receber_sombra = TS.notrecsha;
+TS.animar = TS.animate;
+TS.processar = TS.renderizar = TS.render;
 
 // scene / cena
 
-var cena = scene;
+TS.cena = TS.scene;
 
 // textures :: texturas
 
-var textura_de_canvas = cantex;
-var carregar_textura_de_cubo = loatexcub;
+TS.textura_de_canvas = TS.cantex;
+TS.carregar_textura_de_cubo = TS.loatexcub;
