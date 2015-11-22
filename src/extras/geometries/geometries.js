@@ -14,11 +14,10 @@
  * @returns {Object}
  */
 
-TS.boxgeo = function(w, h, d, ws, hs, ds) {
+TS.box_geometry = TS.boxgeo = function(w, h, d, ws, hs, ds) {
    return new THREE.BoxGeometry(w, h, d, ws, hs, ds);
 };
 
-TS.box_geometry = TS.boxgeo;
 /**
  * 
  * @param {Number} r - radius
@@ -28,8 +27,8 @@ TS.box_geometry = TS.boxgeo;
  * @returns {Object} Returns a new THREE.CircleGeometry circle geometry object.
  */
 
-TS.cirgeo = TS.circle_geometry = function(r, s, ts, tl) {
-   return new THREE.CircleGeometry(r, s, ts, tl);
+TS.circle_geometry = TS.cirgeo = function(radius, segments, thetaStart, thetaLength) {
+   return new THREE.CircleGeometry(radius, segments, thetaStart, thetaLength);
 };
 
 // r:  radius
@@ -37,7 +36,7 @@ TS.cirgeo = TS.circle_geometry = function(r, s, ts, tl) {
 // ts: thetaStart
 // tl: thetaLength
 
-TS.cirbufgeo = TS.circle_buffer_geometry = function(r, s, ts, tl) {
+TS.circle_buffer_geometry = TS.cirbufgeo = function(r, s, ts, tl) {
    return new THREE.CircleBufferGeometry(r, s, ts, tl);
 };
 
@@ -53,8 +52,9 @@ TS.cirbufgeo = TS.circle_buffer_geometry = function(r, s, ts, tl) {
  * @param {Number} tl - theta length
  * @returns {Object} cilinder geometry
  */
-TS.cylgeo = TS.cylinder_geometry = function(rt, rb, h, rs, hs, oe, ts, tl) {
-   return new THREE.CylinderGeometry(rt, rb, h, rs, hs, oe, ts, tl);
+TS.cylinder_geometry = TS.cylgeo = function(
+        radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded, thetaStart, tethaLength) {
+   return new THREE.CylinderGeometry(radiusTop, radiusBottom, height,radialSegments, heightSegments, openEnded, thetaStart, tethaLength);
 };
 
 /**
@@ -62,82 +62,82 @@ TS.cylgeo = TS.cylinder_geometry = function(rt, rb, h, rs, hs, oe, ts, tl) {
  * @param {Number} radius - radius
  * @param {Number} detail - detail
  */
-TS.dodgeo = TS.dodecahedron_geometry = function(radius, detail) {
+TS.dodecahedron_geometry = TS.dodgeo = function(radius, detail) {
    return new THREE.DodecahedronGeometry(radius, detail);
 };
 
-TS.edggeo = TS.edges_geometry = function(geometry, thresholdAngle) {
+TS.edges_geometry = TS.edggeo = function(geometry, thresholdAngle) {
    return new THREE.EdgesGeometry(geometry, thresholdAngle);
 };
 
-TS.extgeo = TS.extrude_geometry = function(shapes, options) {
+TS.extrude_geometry = TS.extgeo = function(shapes, options) {
    return new THREE.ExtrudeGeometry(shapes, options);
 };
 
-TS.icogeo = TS.icosahedron_geometry = function(radius, detail) {
+TS.icosahedron_geometry = TS.icogeo = function(radius, detail) {
    return new THREE.IcosahedronGeometry(radius, detail);
 };
 
-TS.latgeo = TS.lathe_geometry = function(points, segments, phiStart, phiLength) {
+TS.lathe_geometry = TS.latgeo = function(points, segments, phiStart, phiLength) {
    return new THREE.LatheGeometry(points, segments, phiStart, phiLength);
 };
 
-TS.octgeo = TS.octahedron_geometry = function(radius, detail) {
+TS.octahedron_geometry = TS.octgeo = function(radius, detail) {
    return new THREE.OctahedronGeometry(radius, detail);
 };
 
-TS.pargeo = TS.parametric_geometry = function(func, slices, stacks) {
+TS.parametric_geometry = TS.pargeo = function(func, slices, stacks) {
    return new THREE.ParametricGeometry(func, slices, stacks);
 };
 
-TS.plabufgeo = TS.plane_buffer_geometry = function(width, height, widthSegments, heightSegments) {
+TS.plane_buffer_geometry = TS.plabufgeo = function(width, height, widthSegments, heightSegments) {
    return new THREE.PlaneBufferGeometry(width, height, widthSegments, heightSegments);
 };
 
-TS.plageo = TS.plane_geometry = function(width, height, widthSegments, heightSegments) {
+TS.plane_geometry = TS.plageo = function(width, height, widthSegments, heightSegments) {
    return new THREE.PlaneGeometry(width, height, widthSegments, heightSegments);
 };
 
-TS.polgeo = TS.polyhedron_geometry = function(vertices, indices, radius, detail) {
+TS.polyhedron_geometry = TS.polgeo = function(vertices, indices, radius, detail) {
    return new THREE.PolyhedronGeometry(vertices, indices, radius, detail);
 };
 
-TS.ringeo = TS.ring_geometry = function(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength) {
+TS.ring_geometry = TS.ringeo = function(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength) {
    return new THREE.RingGeometry(innerRadius, outerRadius, thetaSegments, phiSegments, thetaStart, thetaLength);
 };
 
-TS.shageo = TS.shape_geometry = function(shapes, options) {
+TS.shape_geometry = TS.shageo = function(shapes, options) {
    return new THREE.ShapeGeometry(shapes, options);
 };
 
-TS.sphbufgeo = TS.sphere_buffer_geometry = function(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
+TS.sphere_buffer_geometry = TS.sphbufgeo = function(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
    return new THREE.SphereBufferGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength);
 };
 
-TS.sphgeo = TS.sphere_geometry = function(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
+TS.sphere_geometry = TS.sphgeo = function(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength) {
    return new THREE.SphereGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength);
 };
 
-TS.tetgeo = TS.tetrahedron_geometry = function(radius, detail) {
+TS.tetrahedron_geometry = TS.tetgeo = function(radius, detail) {
    return new THREE.TetrahedronGeometry(radius, detail);
 };
 
-TS.txtgeo = TS.text_geometry = function(text, parameters) {
+TS.text_geometry = TS.txtgeo = function(text, parameters) {
    return new THREE.TextGeometry(text, parameters);
 };
 
-TS.torgeo = TS.torus_geometry = function(radius, tube, radialSegments, tubularSegments, arc) {
+TS.torus_geometry = TS.torgeo = function(radius, tube, radialSegments, tubularSegments, arc) {
    return new THREE.TorusGeometry(radius, tube, radialSegments, tubularSegments, arc);
 };
 
-TS.knogeo = TS.torus_knot_geometry = function(radius, tube, radialSegments, tubularSegments, p, q, heightScale) {
+TS.torus_knot_geometry = TS.knogeo = function(radius, tube, radialSegments, tubularSegments, p, q, heightScale) {
    return new THREE.TorusKnotGeometry(radius, tube, radialSegments, tubularSegments, p, q, heightScale);
 };
 
-TS.tubgeo = TS.tube_geometry = function(path, segments, radius, radialSegments, closed, taper) {
+TS.tube_geometry = TS.tubgeo = function(path, segments, radius, radialSegments, closed, taper) {
    return new THREE.TubeGeometry(path, segments, radius, radialSegments, closed, taper);
 };
 
-TS.wirgeo = TS.wireframe_geometry = function(geometry) {
+TS.wireframe_geometry = TS.wirgeo = function(geometry) {
    return new THREE.WireframeGeometry(geometry);
 };

@@ -69,3 +69,11 @@ TS.vec3 = function(x, y, z) {
 TS.vec4 = function(x, y, z, w) {
    return new THREE.Vector4(x, y, z, w);
 };
+
+TS.sin = function(angle) {
+    return Math.sin(angle) ;
+};
+
+TS.cos = function(angle) {
+    return Math.cos(angle) ;
+};

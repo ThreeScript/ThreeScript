@@ -9,7 +9,6 @@ objects in the distance being smaller. That said, it uses the same sort of pipel
 Internally you define a view matrix exactly the same as before. However, then the projection
 matrix is formed differently.
 
-
 Function              | Parameters | Description       
 ----------------------|------------|--------------------------------------------------------------
 pcam(fov, a, n, f)    | fov        | Field of view – this is part of scene that can be seen from the position of the camera. As you probably know, we, humans, have almost 180-degree field of view, while some birds might even have a complete 360-degree field of view. However, for computers, we usually use the field of view between 60 and 90 degrees.
@@ -39,3 +38,6 @@ Command          |    Parameters      | Description
 cubcam(n, f, cr) | n near             | Near.
 Cube Camera      | f far              | Far.
                  | cr cube_resolution | Cube resolution.
+
+http://content.udacity-data.com/cs291/notes/UdacityLesson7Cameras.pdf
+https://www.script-tutorials.com/webgl-with-three-js-lesson-9/

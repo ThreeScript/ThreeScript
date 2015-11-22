@@ -11,7 +11,9 @@
 TS.container = function(id, renderer) {
    if (!renderer)
       return null;
-   var c = document.getElementById(id);
+   var c = null;
+   if (id)
+      c = document.getElementById(id);
    if (!c)
       c = document.body;
    c.w = c.clientWidth;

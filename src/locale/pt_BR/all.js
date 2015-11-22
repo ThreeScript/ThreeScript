@@ -99,12 +99,35 @@ TS.vetor4 = TS. vec4;
 // meshes :: malhas
 
 TS.malha = TS.mesh;
+
 TS.malha_de_caixa = TS.boxmes;
-TS.malha_de_esfera = TS.sphmes;
+TS.malha_de_circulo = TS.cirmes;
+TS.malha_bufferizada_de_circulo = TS.cirbufmes;
+TS.malha_de_cilindro = TS.cylmes;
+TS.malha_de_dodecaedro = TS.dodmes;
+TS.malha_de_borda = TS.edgmes;
+TS.malha_de_extrusao = TS.extmes;
+TS.malha_de_icosaedro = TS.icomes;
+TS.malha_de_torno = TS.latmes;
+TS.malha_de_octaedro = TS.octmes;
+TS.malha_parametrica = TS.parmes;
+TS.malha_bufferizada_de_plano = TS.plabufmes;
 TS.malha_de_plano = TS.plames;
+TS.malha_de_poliedro = TS.polmes;
+TS.malha_de_anel = TS.rinmes;
+TS.malha_de_forma = TS.shames;
+TS.malha_bufferizada_de_esfera = TS.sphbufmes;
+TS.malha_de_esfera = TS.sphmes;
+TS.malha_de_tetraedro = TS.tetmes;
+TS.malha_de_texto = TS.txtmes;
+TS.malha_de_toro = TS.tormes;
+TS.malha_de_toro_de_no = TS.knomes;
+TS.malha_de_tubo = TS.tubmes;
+TS.malha_de_fios = TS.wirmes;
+
 // renderers :: renderizadores
 
-TS.renderizador_webgl = TS.wrend;
+TS.renderizador_webgl = TS.wglren;
 
 TS.relacao_de_pixels = TS.pixrat;
 

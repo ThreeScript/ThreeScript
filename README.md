@@ -27,18 +27,18 @@ For every Threejs class, it is created a function with the same parameters, retu
 
 for example, 'scene':
 ```javascript
-function TS.scene() {
+function ts.scene() {
   return THREE.Scene();
 }
 ```
 
 Some of the most common used ThreeScript functions are:
 ```javascript
-- TS.scene();
-- TS.percam(fov, aspect, near, far);
-- TS.wrend(parameters);
-- TS.boxgeo(w, h, d, ): create a box with the width 'w', height 'h', depth 'd', width segments 'ws', height segments 'hs', depth segments 'ds';
-- TS.sphgeo(r, ws, hs, ps, pl, ts, tl): creates a sphere geometry with the radius 'r', width segments 'ws', height segments, phi start 'ps', phiLength 'pl', thetaStart 'ts', thetaLength 'tl';
+- ts.scene();
+- ts.percam(fov, aspect, near, far);
+- ts.wrend(parameters);
+- ts.boxgeo(w, h, d, ): create a box with the width 'w', height 'h', depth 'd', width segments 'ws', height segments 'hs', depth segments 'ds';
+- ts.sphgeo(r, ws, hs, ps, pl, ts, tl): creates a sphere geometry with the radius 'r', width segments 'ws', height segments, phi start 'ps', phiLength 'pl', thetaStart 'ts', thetaLength 'tl';
 ```
 ## Usage
 

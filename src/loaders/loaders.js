@@ -4,16 +4,17 @@
  */
 
 /**
- * Load a THREEjs JSON file
- * @param {String} url - url to json file
- * @param {function} onLoad - onLoad callback
- * @param {function} onProgress - onProgress callback
- * @param {function} onError - onError callback
+ * 
+ * @param {type} loader
+ * @param {type} url
+ * @param {type} on_load
+ * @param {type} on_progress
+ * @param {type} on_error
+ * @returns {undefined}
  */
-TS.loajso = TS.load_json = function(url, onLoad, onProgress, onError) {
-   var loader = new THREE.JSONLoader();
-   loader.load(url, onLoad, onProgress, onError);
-   return loader;
+
+TS.load = function(loader, url, on_load, on_progress, on_error) {
+   loader.load(url, on_load, on_progress, on_error);
 };
 
 /**
@@ -23,10 +24,9 @@ TS.loajso = TS.load_json = function(url, onLoad, onProgress, onError) {
  * @param {function} onProgress - onProgress callback
  * @param {function} onError - onError callback
  */
-TS.texloa = TS.texture_loader = function(url, onLoad, onProgress, onError) {
-   var loader = new THREE.TextureLoader();
-   loader.load(url, onLoad, onProgress, onError);
-   return loader;
+
+TS.texture_loader = TS.texloa = function(manager) {
+   return new THREE.TextureLoader(manager);
 };
 
 /**
@@ -37,8 +37,41 @@ TS.texloa = TS.texture_loader = function(url, onLoad, onProgress, onError) {
  * @param {function} onError - onError callback
  */
 
-TS.loadmat = TS.load_material = function(url, onLoad, onProgress, onError) {
-   var loader = new THREE.MaterialLoader();
-   loader.load(url, onLoad, onProgress, onError);
-   return loader;
+TS.material_loader = TS.matloa = function(manager) {
+   return new THREE.MaterialLoader(manager);
+};
+
+/**
+ * Load a THREEjs JSON file
+ * @param {String} url - url to json file
+ * @param {function} onLoad - onLoad callback
+ * @param {function} onProgress - onProgress callback
+ * @param {function} onError - onError callback
+ */
+
+TS.json_loader = TS.jsoloa = function(manager) {
+   return new THREE.JSONLoader(manager);
+};
+
+/**
+ * Load a OBJ file
+ * @param {String} manager - manager
+ * @param {String} url - url to material file
+ * @param {function} onLoad - onLoad callback
+ * @param {function} onProgress - onProgress callback
+ * @param {function} onError - onError callback
+ */
+
+TS.obj_loader = TS.objloa = function(manager) {
+   return new THREE.OBJLoader(manager);
+};
+
+/**
+ * 
+ * @param {type} manager
+ * @returns {Object}
+ */
+
+TS.image_loader = TS.imgloa = function(manager) {
+   return new THREE.ImageLoader(manager);
 };

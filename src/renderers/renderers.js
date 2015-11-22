@@ -1,16 +1,31 @@
-TS.wrend = TS.webgl_renderer = function(parameters, clearColor, pixelRatio) {
-   var r = new THREE.WebGLRenderer(parameters);
+TS.renderer_config = TS.rencon = function(renderer, clearColor, pixelRatio) {
    if (pixelRatio)
-      this.pixrat(r, pixelRatio);
+      this.pixrat(renderer, pixelRatio);
    else
-      this.pixrat(r, window.devicePixelRatio);
+      this.pixrat(renderer, window.devicePixelRatio);
    if (!clearColor)
       clearColor = 0xFFFFFF;
-   r.setClearColor(TS.color(clearColor));
+   renderer.setClearColor(TS.color(clearColor));
+};
+
+TS.webgl_renderer = TS.wglren = function(parameters, clearColor, pixelRatio) {
+   var r = null;
+   var try_webgl = ((!Detector) || (Detector && Detector.webgl));
+   if (try_webgl) {
+      r = new THREE.WebGLRenderer(parameters);
+      TS.rencon(r, clearColor, pixelRatio);
+   } else if (parameters && parameters.useCanvas)
+      r = ts.canren();
    return r;
 };
 
-TS.pixrat = TS.set_pixel_ratio = function(r, pixelRatio) {
+TS.canvas_renderer = TS.canren = function(parameters, clearColor, pixelRatio) {
+   var r = new THREE.CanvasRenderer(parameters);
+   TS.rencon(r, clearColor, pixelRatio);
+   return r;
+};
+
+TS.set_pixel_ratio = TS.pixrat = function(r, pixelRatio) {
    if (r && r.setPixelRatio)
       r.setPixelRatio(pixelRatio);
 };
