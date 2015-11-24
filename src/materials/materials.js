@@ -30,8 +30,12 @@ TS.mulmat = TS.multi_material = function(parameters) {
    return new THREE.MultiMaterial(parameters);
 };
 
-TS.facmat = TS.mesh_face_material = function(parameters) {
+TS.mesh_face_material = TS.facmat = function(parameters) {
    return new THREE.MeshFaceMaterial(parameters);
+};
+
+TS.mesh_face_material_phong = TS.phofacmat = function(front, side) {
+   return TS.facmat([ts.phomat(front),ts.phomat(side)]);
 };
 
 TS.poimat = TS.mesh_points_material = function(parameters) {
