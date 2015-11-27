@@ -1,10 +1,11 @@
 /**
  * 
- * @type anaglyph_effect
+ * @param {Object} renderer
+ * @param {Number} width
+ * @param {Number} height
+ * @returns {Object}
  */
 
-TS.anaeff = anaglyph_effect = function(renderer) {
-   return new THREE.AnaglyphEffect(renderer);
+TS.anaglyph_effect = TS.anaeff = function(renderer, width, height) {
+   return new THREE.AnaglyphEffect(renderer, width, height);
 };
-
-TS.anaglyph_effect = TS.anaeff;
