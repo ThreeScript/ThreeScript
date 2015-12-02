@@ -1,0 +1,66 @@
+body {
+   font-family: Monospace;
+   background-color: #000;
+   color: #fff;
+   margin: 0px;
+   overflow: hidden;
+}
+
+#info {
+   position: absolute;
+   top: 10px;
+   width: 100%;
+   text-align: center;
+   z-index: 100;
+   display: none;
+}
+
+#menu-ajuda {
+   position: absolute;
+   left: 80px;
+   width: 100px;
+   text-align: center;
+   z-index: 100;
+   display: block;
+   background: #444488;
+   opacity: 0.8;
+}
+
+#moldura-ajuda {
+  position: absolute;
+  top: 16px;
+  left: 81px;
+  bottom: 10px;
+  right: 10px;
+  background: #000044;
+  opacity: 0.8;
+  display: block;
+}
+
+#ajuda {
+  position: absolute;
+  padding: 5px;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  text-align: left;
+  z-index: 200;
+  color: #000000;
+  background: #ffffff;
+  opacity: 0.8;
+  font-size: 22px;
+  font-family: Times New Roman;
+}
+
+.div-ajuda {
+   background: #000000;
+   color: #ffff00;
+   padding: 5px;
+   margin-bottom: 5px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+}
+
+#info a, .button { color: #f00; font-weight: bold; text-decoration: underline; cursor: pointer }

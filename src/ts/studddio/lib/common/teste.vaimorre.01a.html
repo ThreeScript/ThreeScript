@@ -1,0 +1,278 @@
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Make-3D</title>
+
+
+
+      <style>
+         body {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+         }
+         #div-scene {
+            z-index: 1;
+         }
+         #div-menu {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 300px;
+            height: 300px;
+            z-index: 2; 
+         }
+         .dg li.title {
+            color: yellow;
+         }		
+         .dg .property-name {
+            color: white;
+         }
+         .dg.main .close-button {
+            color: orange;
+         }
+      </style>
+      <script src="js/Three.js"></script>
+      <script src="js/Detector.js"></script>
+      <script src="js/controls.js"></script>
+      <script src="js/Stats.js"></script>
+      <script src="js/OrbitControls.js"></script>
+      <script src="js/THREEx.KeyboardState.js"></script>
+      <script src="js/THREEx.FullScreen.js"></script>
+      <script src="js/THREEx.WindowResize.js"></script>
+      <script src="js/DAT.GUI.min.js"></script>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+
+      <script>
+
+         // standard global variables
+         var container, scene, camera, renderer, controls, stats, gui, containObject;
+         var keyboard = new THREEx.KeyboardState();
+         var clock = new THREE.Clock();
+
+         // custom global variables
+         var floor;
+
+         document.onload = function() {
+
+            // initialization
+            init();
+
+            // animation loop / game loop
+            animate();
+         }
+         ///////////////
+         // FUNCTIONS //
+         ///////////////
+
+         function init()
+         {
+
+
+            /////////
+            // GUI //
+            /////////
+
+            dat.GUI.prototype.removeFolder = function(name) {
+               var folder = this.__folders[name];
+               if (!folder) {
+                  return;
+               }
+               folder.close();
+               this.__ul.removeChild(folder.domElement.parentNode);
+               delete this.__folders[name];
+               this.onResize();
+            }
+
+            gui = new dat.GUI();
+            gui.domElement.parentElement.style.zIndex = 3;
+
+            ///////////
+            // SCENE //
+            ///////////
+            scene = new THREE.Scene();
+
+
+            ////////////
+            // CAMERA //
+            ////////////
+
+            // set the view size in pixels (custom or according to window size)
+            // var SCREEN_WIDTH = 400, SCREEN_HEIGHT = 300;
+            var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+            // camera attributes
+            var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 10000;
+            // set up camera
+            camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+            // add the camera to the scene
+            scene.add(camera);
+            // the camera defaults to position (0,0,0)
+            // 	so pull it back (z = 400) and up (y = 100) and set the angle towards the scene origin
+            camera.position.set(0, 100, 400);
+            camera.lookAt(scene.position);
+
+            //////////////
+            // RENDERER //
+            //////////////
+
+            // create and start the renderer; choose antialias setting.
+            if (Detector.webgl)
+               renderer = new THREE.WebGLRenderer({antialias: true});
+            else
+               renderer = new THREE.CanvasRenderer();
+
+            renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+
+            // attach div element to variable to contain the renderer
+            container = document.getElementById('div-scene');
+            // alternatively: to create the div at runtime, use:
+            //   container = document.createElement( 'div' );
+            //    document.body.appendChild( container );
+
+            // attach renderer to the container div
+            container.appendChild(renderer.domElement);
+
+            ////////////
+            // EVENTS //
+            ////////////
+
+            // automatically resize renderer
+            THREEx.WindowResize(renderer, camera);
+            // toggle full-screen on given key press
+            THREEx.FullScreen.bindKey({charCode: 'm'.charCodeAt(0)});
+
+            //////////////
+            // CONTROLS //
+            //////////////
+
+            // move mouse and: left   click to rotate, 
+            //                 middle click to zoom, 
+            //                 right  click to pan
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+            ///////////
+            // STATS //
+            ///////////
+
+            // displays current and past frames per second attained by scene
+            stats = new Stats();
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.bottom = '0px';
+            stats.domElement.style.zIndex = 90;
+            container.appendChild(stats.domElement);
+
+            ///////////
+            // LIGHT //
+            ///////////
+
+            // create a light
+            var light = new THREE.PointLight(0xffffff);
+            light.position.set(100, 250, 100);
+            scene.add(light);
+            var ambientLight = new THREE.AmbientLight(0x050303);
+            scene.add(ambientLight);
+
+            var spotLight = new THREE.SpotLight(0xffffff);
+            spotLight.position.set(-40, 60, 020);
+            spotLight.castShadow = true;
+            scene.add(spotLight);
+
+            //////////////
+            // GEOMETRY //
+            //////////////
+
+
+
+            var axes = new THREE.AxisHelper(50);
+            scene.add(axes);
+
+            containObject = new THREE.Object3D;
+            scene.add(containObject);
+
+            ///////////
+            // FLOOR //
+            ///////////
+
+            // note: 4x4 checkboard pattern scaled so that each square is 25 by 25 pixels.
+            var floorTexture = new THREE.ImageUtils.loadTexture('images/plain.png');
+            floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
+            floorTexture.repeat.set(10, 10);
+            // DoubleSide: render texture on both sides of mesh
+            var floorMaterial = new THREE.MeshLambertMaterial({colour: 0xdddddd, side: THREE.DoubleSide});
+            var floorGeometry = new THREE.PlaneGeometry(500, 500, 1, 1);
+            floor = new THREE.Mesh(floorGeometry, floorMaterial);
+            floor.receiveShadow = true;
+            floor.position.y = -.3;
+            floor.rotation.x = Math.PI / 2;
+            scene.add(floor);
+
+            /////////
+            // SKY //
+            /////////
+
+            // recommend either a skybox or fog effect (can't use both at the same time) 
+            // without one of these, the scene's background color is determined by webpage background
+
+            // make sure the camera's "far" value is large enough so that it will render the skyBox!
+            var skyBoxGeometry = new THREE.CubeGeometry(10000, 10000, 10000);
+            // BackSide: render faces from inside of the cube, instead of from outside (default).
+            var skyBoxMaterial = new THREE.MeshBasicMaterial({color: 0x9999ff, side: THREE.BackSide});
+            var skyBox = new THREE.Mesh(skyBoxGeometry, skyBoxMaterial);
+            // scene.add(skyBox);
+
+            // fog must be added to scene before first render
+            scene.fog = new THREE.FogExp2(0x9999ff, 0.00025);
+         }
+
+         function animate()
+         {
+            requestAnimationFrame(animate);
+            render();
+            update();
+         }
+
+         function update()
+         {
+            // delta = change in time since last call (in seconds)
+            var delta = clock.getDelta();
+
+            // functionality provided by THREEx.KeyboardState.js
+            if (keyboard.pressed("1"))
+               document.getElementById('message').innerHTML = ' Have a nice day! - 1';
+            if (keyboard.pressed("2"))
+               document.getElementById('message').innerHTML = ' Have a nice day! - 2 ';
+
+            controls.update();
+            stats.update();
+         }
+
+         function render()
+         {
+            renderer.render(scene, camera);
+         }
+
+      </script>
+   </head>
+   <body>
+      <div class='container'>
+         <div id="div-menu" class='wrap'>
+            <input type='checkbox' id='checking' style='display:none;' />
+            <button class='blob'><i class="fa fa-download"></i></button>
+            <button class='blob'><a onclick="cube_function()"><i class="fa fa-cubes"></i></a></button>
+            <button class='blob'><a onclick="removeCube()"><i class="fa fa-eraser"></i></a></button>
+            <button class='blob'><i class="fa fa-pencil-square-o"></i></button>
+            <button class='blob'><i class="fa fa-folder-open-o"></i></button>
+            <button class='blob'><i class="fa fa-text-width"></i></button>
+            <button class='blob'><i class="fa fa-paint-brush"></i></button>
+            <button class='blob'><i class="fa fa-question"></i></button>
+            <label class='blob' for='checking'> </label>
+            <div class='logo'></div>
+         </div>
+         <div id="div-scene"></div>
+      </div>
+   </body>
+</html>
+
