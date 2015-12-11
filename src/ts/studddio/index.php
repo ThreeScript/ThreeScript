@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -87,6 +86,31 @@
       <script src="/oslib/js/threejs/r73/examples/fonts/droid/droid_serif_regular.typeface.js"></script>
       <script src="/oslib/js/threejs/r73/examples/fonts/droid/droid_serif_bold.typeface.js"></script>
 
+      <?$threescriptSrcDir = "/master/ThreeScript/src";?>
+
+      <? echo "<script src='$threescriptSrcDir/ts/ts.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/ts/params/params.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/ts/materials/materials.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/ts/defaults/defaults.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/cameras/cameras.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/container/container.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/core/core.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/examples/js/controls.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/examples/js/effects.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/extras/extras.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/extras/geometries/geometries.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/lights/lights.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/loaders/loaders.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/materials/materials.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/math/math.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/meshes/meshes.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/objects/objects.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/renderers/renderers.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/scenes/scenes.js'></script>\n"; ?>
+      <? echo "<script src='$threescriptSrcDir/textures/textures.js'></script>\n"; ?>
+
+      <? echo "<script src='$threescriptSrcDir/locale/pt_BR/all.js'></script>\n"; ?>
+
       <script src="/master/ThreeScript/src/ts/studddio/lib/common/S3dObject3D.js"></script>
       <script src="/master/ThreeScript/src/ts/studddio/lib/common/S3dMesh.js"></script>
       <script src="/master/ThreeScript/src/ts/studddio/lib/common/S3dPos.js"></script>
@@ -119,15 +143,9 @@
 
       <script src="/master/ThreeScript/src/ts/studddio/tour/tour.js"></script>
       <script src="/master/ThreeScript/src/ts/studddio/tour/global.js"></script>
-      <!--script src="/master/ThreeScript/src/ts/studddio/tour/eventos.js"></script-->
       <script src="/master/ThreeScript/src/ts/studddio/tour/inicio.js"></script>
-      <script src="/master/ThreeScript/src/ts/studddio/tour/animacao.js"></script>
-      <!--script src="/master/ThreeScript/src/ts/studddio/tour/principal.js"></script-->
 
       <script src="/master/ThreeScript/src/ts/studddio/tour/presentation/studddioPresentation.js"></script>
-      <script src="/master/ThreeScript/src/ts/studddio/tour/presentation/studddioPresentationFrame.js"></script>
-      <script src="/master/ThreeScript/src/ts/studddio/tour/presentation/studddioPresentationParam.js"></script>
-      <script src="/master/ThreeScript/src/ts/studddio/tour/presentation/startPresentation.js"></script>
 
       <script src="/master/ThreeScript/src/ts/studddio/lib/action/S3dAction.js"></script>
       <script src="/master/ThreeScript/src/ts/studddio/lib/action/S3dActionMove.js"></script>
@@ -138,27 +156,7 @@
       <script src="/master/ThreeScript/src/ts/studddio/lib/action/S3dActionRotateTo.js"></script>
       <script src="/master/ThreeScript/src/ts/studddio/lib/action/S3dActionChain.js"></script>
       
-      <?$threescriptSrcDir = "/master/ThreeScript/src";?>
-
-      <? echo "<script src='$threescriptSrcDir/ts/ts.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/cameras/cameras.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/container/container.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/core/core.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/examples/js/controls.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/examples/js/effects.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/extras/extras.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/extras/geometries/geometries.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/lights/lights.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/loaders/loaders.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/materials/materials.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/math/math.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/meshes/meshes.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/objects/objects.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/renderers/renderers.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/scenes/scenes.js'></script>\n"; ?>
-      <? echo "<script src='$threescriptSrcDir/textures/textures.js'></script>\n"; ?>
-
-      <? echo "<script src='$threescriptSrcDir/locale/pt_BR/all.js'></script>\n"; ?>
+      <script src="/master/ThreeScript/src/ts/s3d/slider/slider.js"></script>
 
       <script>
          document.body.onload = function() {

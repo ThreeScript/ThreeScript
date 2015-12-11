@@ -5,6 +5,8 @@ var TS = new function() {
 var ts = TS;
 
 TS.tsglobal = {
+   run: {
+   },
    mouse: {
       leftButtonDown: false,
       moveY: true,

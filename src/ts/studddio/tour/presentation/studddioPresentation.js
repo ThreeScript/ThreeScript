@@ -349,18 +349,15 @@ S3D.S3dStudddioSlider.prototype.p290 = function() {
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p300 = function() {
-
    var p300_texts = [
       ["Studdio is a middleware JavaScript 3D engine", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["acting over Threejs or Babylonjs", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["engines, they are software core for", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["easy 3D development.", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p300_slideTexts = this.createSlideTexts(
            0, 0, z_300, "to", 0, 0, zTo_300,
            p300_texts, 0, 0, 0, startTime_300, loopTime_300, stepTime_300, this.p310);
-
    this.p300_slideTexts.centerX();
    // this.p300_slideTexts.position = 200;
 
@@ -369,65 +366,52 @@ S3D.S3dStudddioSlider.prototype.p300 = function() {
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p310 = function() {
-
    var p310_texts = [
       ["Studddio provides facilities using Threejs classes,", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["how to group objects to work together, for example to", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["dynamically move, rotate, scale and translate ", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["the grouped objects in the scene.", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p310_slideTexts = this.createSlideTexts(
            0, 0, z_310, "to", 0, 0, zTo_310,
            p310_texts, 0, 0, 0, startTime_310, loopTime_310, stepTime_310, this.p320);
-
    this.p310_slideTexts.centerX();
    // this.p310_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p320 = function() {
-
    var p320_texts = [
       ["The first thing to say is that Studddio ", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["has the global variable S3D.", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_320, "to", 0, 0, zTo_320,
            p320_texts, 0, 0, 0, startTime_320, loopTime_320, stepTime_320, this.p330);
-
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p330 = function() {
-
    var p330_texts = [
       ["It'll internally receive all other properties ", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["and functions used in the library, therefore all classes, ", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["properties, and functions in studdio library ", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["are prefixed with S3D variable.", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p330_slideTexts = this.createSlideTexts(
            0, 0, z_330, "to", 0, 0, zTo_330,
            p330_texts, 0, 0, 0, startTime_330, loopTime_330, stepTime_330, this.p340);
-
    this.p330_slideTexts.centerX();
    // this.p330_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p340 = function() {
-
    var p340_texts = [
       ["The S3D.S3dObject3D class is ancestral and inherited", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["by all other visual classes belonging to the library. ", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
@@ -435,174 +419,140 @@ S3D.S3dStudddioSlider.prototype.p340 = function() {
       ["for the descendant classes.", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
 
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_340, "to", 0, 0, zTo_340,
            p320_texts, 0, 0, 0, startTime_340, loopTime_340, stepTime_340, this.p350);
-
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p350 = function() {
-
    var p350_texts = [
       ["The S3D classes for characters, texts, memos, cubes, ", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["spheres, cilynders, chains and other objects are ", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["inherited from S3D.S3dObject3D class, inheriting ", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["its properties and methods and extending them.", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p350_slideTexts = this.createSlideTexts(
            0, 0, z_350, "to", 0, 0, zTo_350,
            p350_texts, 0, 0, 0, startTime_350, loopTime_350, stepTime_350, this.p400);
-
    this.p350_slideTexts.centerX();
    // this.p350_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p360 = function() {
-
    var p320_texts = [
       ["", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       [".", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_310, "to", 0, 0, zTo_320,
            p320_texts, 0, 0, 0, startTime_320, loopTime_320, stepTime_320, this.p400);
-
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p370 = function() {
-
    var p320_texts = [
       ["", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       [".", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_310, "to", 0, 0, zTo_320,
            p320_texts, 0, 0, 0, startTime_320, loopTime_320, stepTime_320, this.p400);
-
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p380 = function() {
-
    var p320_texts = [
       ["", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       [".", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_310, "to", 0, 0, zTo_320,
            p320_texts, 0, 0, 0, startTime_320, loopTime_320, stepTime_320, this.p400);
-
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p390 = function() {
-
    var p320_texts = [
       ["", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       [".", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_310, "to", 0, 0, zTo_320,
            p320_texts, 0, 0, 0, startTime_320, loopTime_320, stepTime_320, this.p400);
-
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p395 = function() {
-
    var p320_texts = [
       ["", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       [".", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_310, "to", 0, 0, zTo_320,
            p320_texts, 0, 0, 0, startTime_320, loopTime_320, stepTime_320, this.p400);
-
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p396 = function() {
-
    var p320_texts = [
       ["", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       [".", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_310, "to", 0, 0, zTo_320,
            p320_texts, 0, 0, 0, startTime_320, loopTime_320, stepTime_320, this.p400);
 
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/
 
 S3D.S3dStudddioSlider.prototype.p397 = function() {
-
    var p320_texts = [
       ["", 0, 0, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -100, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       ["", 0, -200, 0, 0, 0, 0, this.tpnormal, this.mgray6, null],
       [".", 0, -300, 0, 0, 0, 0, this.tpnormal, this.mgray6, null]
    ];
-
    this.p320_slideTexts = this.createSlideTexts(
            0, 0, z_310, "to", 0, 0, zTo_320,
            p320_texts, 0, 0, 0, startTime_320, loopTime_320, stepTime_320, this.p400);
-
    this.p320_slideTexts.centerX();
    // this.p320_slideTexts.position = 200;
-
 };
 
 /*----------------------------------------------------------------------------*/

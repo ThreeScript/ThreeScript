@@ -14,8 +14,15 @@ S3D.S3dSlider.prototype.constructor = S3D.S3dSlider;
 
 /*----------------------------------------------------------------------------*/
 
-S3D.S3dSlider.prototype.getSlide = function() {
-   return new S3D.S3dSlide({owner: this, scene: this.obj3d});
+S3D.S3dSlider.prototype.getSlide = function(onCreate) {
+   return new S3D.S3dSlide({
+      owner: this, 
+      scene: this.obj3d, 
+      onCreate: onCreate,
+      fontParamList: this.fontParamList,
+      textParamList: this.textParamList,
+      materialList: this.materialList,
+      geometryStyleArray: this.geometryStyleArray});
 };
 
 /*----------------------------------------------------------------------------*/

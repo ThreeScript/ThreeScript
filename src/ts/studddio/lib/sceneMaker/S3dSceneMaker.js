@@ -153,9 +153,12 @@ S3D.S3dSceneMaker.prototype.cameraTarget = function(cameraTarget) {
 
 /* -------------------------------------------------------------------------- */
 
-S3D.S3dSceneMaker.prototype.createContainer = function(containerName) {
-   if (containerName)
-      this.container = document.getElementById(containerName);
+S3D.S3dSceneMaker.prototype.createContainer = function(containerId) {
+   if (containerId)
+      if (containerId === document.body)
+         this.container = containerId;
+      else
+         this.container = document.getElementById(containerId);
    else {
       this.container = document.createElement('div');
       document.body.appendChild(this.container);

@@ -1,3 +1,8 @@
+
+var tour = {};
+
+var studddioPresentationParam = ts.kitdef();
+
 var wait_time_01 = 3000;
 var step_time_01 = 3000;
 var step_time_02 = 20000;
@@ -387,3 +392,43 @@ slides.actions.ac290 = function(owner) {
 };
 
 /*----------------------------------------------------------------------------*/
+
+function Animate() {
+   requestAnimationFrame(Animate);
+   if (globalUseTrackball) {
+      globalSceneMaker.trackballControls.update();
+   } else {
+      Render();
+   }
+}
+
+/*----------------------------------------------------------------------------*/
+
+function Render() {
+   var callback = null;
+   var usarCallback = false;
+   if (usarCallback)
+      callback = function() {
+      };
+   globalSceneMaker.render(callback);
+}
+
+/*----------------------------------------------------------------------------*/
+
+function CreateGlobalStudddioPresentation3d(studddioPresentationParams) {
+   var presentationParams = {
+      owner: null,
+      scene: globalSceneMaker.scene,
+      sceneMaker: globalSceneMaker,
+      materialList: studddioPresentationParams.materialList,
+      fontParamList: studddioPresentationParams.fontParamList,
+      textParamList: studddioPresentationParams.textParamList,
+      geometryStyleArray: globalSceneMaker.geometryStyleArray,
+      s3dObjArray: globalSceneMaker.s3dObjArray,
+      actionChain: globalSceneMaker.actionChain
+   };
+   globalStudddioPresentation = new S3D.S3dStudddioSlider(presentationParams);
+}
+
+/*----------------------------------------------------------------------------*/
+
