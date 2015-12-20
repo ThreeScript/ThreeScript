@@ -14,3 +14,25 @@ var help = [
       ]
    ]
 ];
+
+var __ts_help = {
+   json: {}
+};
+
+help.json.commands = {};
+var __ts_hc = help.json.commands;
+
+__ts_hc.animation = [
+   'aniact', [
+      ['clip'],
+      ['startTime'],
+      ['timeScale'],
+      ['weight'],
+      ['loop']
+   ],
+   'anicli', [
+      ['name'],
+      ['duration'],
+      ['tracks']
+   ]
+];
