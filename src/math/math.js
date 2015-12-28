@@ -1,3 +1,14 @@
+
+/**
+ * 
+ * @param {Number} n
+ * @returns {Boolean}
+ */
+
+TS.isnum = function(n) {
+   return !isNaN(parseFloat(n)) && isFinite(n);
+};
+
 TS.box2 = function(min, max) {
    return new THREE.Box2(min, max);
 };

@@ -39,7 +39,7 @@ TS.mesh_face_material_phong = TS.phofacmat = function(front, side) {
 };
 
 TS.poimat = TS.mesh_points_material = function(parameters) {
-   return new THREE.MeshPhongMaterial(parameters);
+   return new THREE.PointsMaterial(parameters);
 };
 
 TS.rawmat = TS.raw_shader_material = function(parameters) {

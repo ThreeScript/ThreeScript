@@ -25,6 +25,10 @@ TS.container = function(id, renderer) {
    return c;
 };
 
+TS.on = function(listener, callback) {
+   window.addEventListener(listener, callback);
+};
+
 /**
  * Bind resize event on window, update the view size according of window size
  * @param {Object} container - container object
@@ -56,7 +60,7 @@ TS.onresize = function(container, camera, renderer, callback) {
          renderer.setSize(w, h);
 
       if (callback) {
-         callack(event);
+         callback(event, container, camera, renderer);
       }
    });
 };
@@ -132,6 +136,24 @@ TS.onmouse = function(container, movingObject, moveY, velocity, direction) {
    container.addEventListener('dblclick', function(event) {
       tsgm.moveY = !tsgm.moveY;
       mousemove(event);
+   });
+};
+
+TS.on_mouse_down = TS.onmoudow = function(container, callback) {
+   container.addEventListener('mousedown', function(event) {
+      callback(event);
+   });
+};
+
+TS.on_mouse_up = TS.onmouup = function(container, callback) {
+   container.addEventListener('mouseup', function(event) {
+      callback(event);
+   });
+};
+
+TS.on_mouse_move = TS.onmoumov = function(container, callback) {
+   container.addEventListener('mousemove', function(event) {
+      callback(event);
    });
 };
 

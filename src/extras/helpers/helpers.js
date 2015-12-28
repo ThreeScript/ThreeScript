@@ -6,7 +6,7 @@ TS.axis_helper = TS.axihel = function(size) {
    return new THREE.AxisHelper(size);
 };
 
-TS.bounding_box_helper = bouhel.xx = function(object, hex) {
+TS.bounding_box_helper = TS.bouhel = function(object, hex) {
    return new THREE.BoundingBoxHelper(object, hex);
 };
 TS.box_helper = TS.boxhel = function(object) {

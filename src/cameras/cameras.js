@@ -49,6 +49,13 @@ TS.updpromat = function(camera) {
 
 TS.update_projection_matrix = TS.updpromat;
 
+/**
+ * Returns the new THREE.PerspectiveCamera pespective camera object.
+ * @param {Object} from - look from
+ * @param {Object} to - look to
+ * @returns {Boolean} operation success flag
+ */
+
 TS.lookat = function(from, to) {
    if (from && from.lookAt && to && to.position) {
       from.lookAt(to.position);

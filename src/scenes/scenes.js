@@ -47,7 +47,7 @@ TS.animate = function(r, s, c, startCallback, animCallback, renderCallback) {
       camera: c};
    function localRender() {
       if (renderCallback)
-         renderCallback(s, c);
+         renderCallback(r, s, c);
       else
          TS.render(r, s, c);
    }

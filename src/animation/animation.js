@@ -30,8 +30,27 @@ TS.animation_clip = TS.anicli = function(name, duration, tracks) {
  * @returns {Object}
  */
 
-TS.animation_mixer = TS.animix = function(root) {
-   return new THREE.AnimationMixer(root);
+TS.animation_mixer = TS.animix = function(root, params) {
+   var mixer = new THREE.AnimationMixer(root);
+   if (params) {
+      if (params.action) {
+         mixer.addAction(params.action);
+      }
+   }
+   return mixer;
+};
+
+/**
+ * 
+ * @param {type} mixer
+ * @param {type} action
+ * @returns {Object}
+ */
+
+TS.add_mixer_action = TS.addmixact = function(mixer, action) {
+   if (mixer && action) {
+      mixer.addAction(action);
+   }
 };
 
 /**
