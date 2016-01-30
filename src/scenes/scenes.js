@@ -40,7 +40,7 @@ TS.notrecsha = function() {
 
 TS.stopraf = false;
 
-TS.animate = function(r, s, c, startCallback, animCallback, renderCallback) {
+   TS.animate = function(r, s, c, startCallback, animCallback, renderCallback) {
    var animator = {
       renderer: r,
       scene: s,
